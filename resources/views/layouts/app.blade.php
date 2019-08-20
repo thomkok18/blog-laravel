@@ -28,9 +28,11 @@
         @yield('content')
     </main>
 </div>
-<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace('article-ckeditor');
-</script>
+@if (Route::current()->getName() === 'posts.create' || Route::current()->getName() === 'posts.edit')
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('article-ckeditor');
+    </script>
+@endif
 </body>
 </html>
