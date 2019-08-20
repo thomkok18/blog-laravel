@@ -11,20 +11,12 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 
 //php artisan route:list
 Route::resource('posts', 'PostsController');
-
-//Route::get('/user/{name}/{id}', function ($name, $id) {
-//    return 'This is user '.$name.' with an id of '.$id;
-//});
 
 Auth::routes();
 
